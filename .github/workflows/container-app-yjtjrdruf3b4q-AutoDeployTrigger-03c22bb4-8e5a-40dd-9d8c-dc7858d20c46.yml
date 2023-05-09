@@ -7,7 +7,7 @@ on:
     branches: 
       [ master ]
     paths:
-    - 'ShowMeMyEnvironmentVariables/**'
+    - '/**'
     - '.github/workflows/container-app-yjtjrdruf3b4q-AutoDeployTrigger-03c22bb4-8e5a-40dd-9d8c-dc7858d20c46.yml'
 
   # Allow mannually trigger 
@@ -33,7 +33,7 @@ jobs:
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v1
         with:
-          appSourcePath: ${{ github.workspace }}/ShowMeMyEnvironmentVariables 
+          appSourcePath: ${{ github.workspace }}
           registryUrl: containerregistryyjtjrdruf3b4q.azurecr.io
           registryUsername: ${{ secrets.CONTAINERAPPYJTJRDRUF3B4Q_REGISTRY_USERNAME }}
           registryPassword: ${{ secrets.CONTAINERAPPYJTJRDRUF3B4Q_REGISTRY_PASSWORD }}
